@@ -1,0 +1,15 @@
+services:
+  php81:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_81
+    restart: unless-stopped
+    volumes:
+      - /root/www:/var/www/html
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
